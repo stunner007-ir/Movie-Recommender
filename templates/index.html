@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Recommender System</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+    crossorigin="anonymous"
+    />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+<div class="container">
+    <h1>About</h1>
+     This Movie Recommendation System uses Content Based Filtering and is built using Flask API and Python. Here,Cosine
+     Similarity is
+     used to generate similarity. Feature extraction methods and distance metrics are utilised to generate recommendations.
+</div>
+ <div class="login">
+
+   <div class="container">
+
+	<div class=header>Movie Recommender System</div>
+     <!-- Main Input For Receiving Query to ML -->
+    <form action="{{ url_for('recommend')}}"method="post">
+    	<input type="text" name="movie" placeholder="Enter Name of Movie" required="required" />
+     <button type="submit" class="submit_btn">Recommend</button>
+
+    </form>
+
+
+   <br>
+   <br>
+
+   {% for each in recommended_movie %}
+   <h4>
+    {{ each }}
+  </h4>
+    {% endfor %}
+  </div>
+ </div>
+<div class="container" >
+    <h1>Developed By: stunner007</h1>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+numpy
+pandas
+difflib
+sklearn
+flask
+scikit-learn
